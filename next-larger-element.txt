@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int nextLargerElement(int n,long long *a){
+    stack<long long> st;
+    for(int i=n-1;i>=0;i--){
+        while(st.empty()==false && st.top()<a[i]){
+            st.pop();
+        }
+        long long t=a[i];
+        if(st.empty()){
+            a[i]=-1;
+        }
+        else{
+            a[i]=st.top();
+        }
+        st.push(t);
+    }
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+}
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        long long a[n];
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        nextLargerElement(n,a);
+        cout<<endl;
+    }
+    return 0;
+}

@@ -1,0 +1,11 @@
+int maxLevel=0;
+void left(Node root,int level){
+    if(root==null)
+    return ;
+    if(maxLevel<level){
+        System.out.println(root.data+ " ");
+        maxLevel=level;
+    }
+}
+    left(node.left,level+1);
+    left(node.right,level+1);

@@ -1,0 +1,28 @@
+void push(int a)
+	{
+        // Your code here
+        if(front==null){
+            QueueNode temp = new QueueNode(a);
+            rear=temp;
+            front=temp;
+        }
+        else{
+            QueueNode temp = new QueueNode(a);
+            rear.next=temp;
+            rear=temp;
+        }
+	}
+	
+	
+	int pop()
+	{
+        if(front==null)
+        return -1;
+        else{
+            QueueNode temp = front;
+            int x=front.data;
+            front=front.next;
+            temp.next=null;
+            return x;
+        }
+	}
